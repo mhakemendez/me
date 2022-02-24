@@ -1,0 +1,64 @@
+.tech {
+    box-shadow: $shadow;
+    &-container {
+        @include container();
+        padding: 6.94em 9.03em;
+    }
+
+    &-header-holder {
+        margin-bottom: 48px;
+    }
+
+    &-header {
+        @include title();
+        color: $white !important;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 12px;
+        grid-template-rows: repeat(3, auto);
+        row-gap: 12px;
+
+        @include sm-screen {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile-landscape {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &-icon-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2.22em;
+        border-radius: 6px;
+        box-shadow: $shadow;
+        border: 2px solid $secondary;
+        cursor: pointer;
+        transition: 1s;
+        background: $white;
+
+        &:hover {
+            background: $dark;
+            transform: translateY(-5px);
+            i.colored {
+                color: $white;
+            }
+        }
+
+        i.colored {
+            font-size: 13.89em;
+            color: $secondary;
+            box-shadow: $shadow;
+            border-radius: 6px;
+
+            @include sm-screen {
+                font-size: 150px;
+            }
+        }
+    }
+}

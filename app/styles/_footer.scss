@@ -1,0 +1,127 @@
+.footer {
+    background: $dark;
+    &-container {
+        @include container();
+        padding: 20px 9.03em;
+    }
+
+    &-top {
+        border-bottom: 1px solid $light;
+        padding-bottom: 24px;
+    }
+
+    &-brand {
+        color: $secondary;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 900;
+        font-size: 22px;
+        position: relative;
+        padding-bottom: 10px;
+        transition: 1s;
+
+        @include mobile-portrait {
+            text-align: center;
+            display: block;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 0px;
+            background: $secondary;
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+            transition: 0.5s ease-in;
+        }
+
+        &:hover {
+            color: $white;
+            &::after {
+                width: 80px;
+            }
+        }
+    }
+
+    &-nav-links {
+        display: flex;
+        gap: 24px;
+        margin-top: 32px;
+        margin-bottom: 24px;
+
+        @include mobile-portrait {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &-links {
+        color: $white;
+        text-transform: uppercase;
+        font-family: $fredoka;
+        letter-spacing: 3px;
+        font-size: 14px;
+        position: relative;
+
+        @include mobile-portrait {
+            font-size: 12px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 0px;
+            background: $secondary;
+            top: 100%;
+            left: 0;
+            border-radius: 2px;
+            transition: 0.5s ease-in;
+        }
+
+        &:hover {
+            color: $white;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    &-social-box {
+        display: flex;
+        gap: 12px;
+        @include mobile-portrait {
+            justify-content: center;
+        }
+        .social-links {
+            img {
+                width: 38px;
+                height: 38px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &-right {
+        color: $white;
+        padding-top: 12px;
+        font-style: italic;
+        @include mobile-portrait {
+            text-align: center;
+        }
+
+        .copyright {
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        .ars {
+            font-size: 12px;
+            span {
+                text-transform: uppercase;
+                color: $secondary;
+            }
+        }
+    }
+}

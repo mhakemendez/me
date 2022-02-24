@@ -1,0 +1,108 @@
+.project {
+    background: $white;
+    box-shadow: $shadow;
+    &-container {
+        @include container();
+        padding: 6.94em 9.03em;
+    }
+
+    &-header {
+        @include title();
+        margin-bottom: 48px;
+        max-width: 500px;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+        row-gap: 16px;
+
+        @include mobile-landscape {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &-box {
+        box-shadow: $shadow;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+            .project-link {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 95%;
+        border-radius: 12px;
+        transform: translateY(-100%);
+        transition: 1s ease-in-out;
+    }
+
+    &-view-btn {
+        border: none;
+        background: $dark;
+        padding: 16px 32px;
+        color: $white;
+        text-transform: uppercase;
+        border-radius: 12px;
+        letter-spacing: 3px;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &-img-holder {
+        img {
+            border-radius: 12px 12px 0px 0px;
+        }
+    }
+
+    &-info {
+        padding: 2.22em;
+    }
+
+    &-name {
+        color: $dark;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+
+        @include mobile-portrait {
+            font-size: 14px;
+        }
+    }
+
+    &-desc {
+        margin-top: auto;
+        color: $dark;
+        text-transform: capitalize;
+        font-size: 16px;
+        letter-spacing: 2px;
+        font-family: $fredoka;
+        font-weight: 500;
+
+        @include mobile-portrait {
+            font-size: 12px;
+        }
+    }
+}

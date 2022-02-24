@@ -1,0 +1,110 @@
+.hero {
+    box-shadow: $shadow;
+    position: relative;
+
+    &::after {
+        content: "";
+        background: $dark;
+        position: absolute;
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        top: 0;
+        left: 50%;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    &-container {
+        @include container();
+        padding: 9.03em;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile-portrait {
+            text-align: center;
+        }
+    }
+
+    &-left {
+        width: 100%;
+    }
+
+    &-header {
+        font-size: 74px;
+        max-width: 900px;
+        text-transform: capitalize;
+        letter-spacing: 5px;
+        font-weight: 900;
+        color: $white;
+        font-family: $fredoka;
+        @include sm-screen {
+            font-size: 48px;
+        }
+        @include tablet-screen {
+            font-size: 34px;
+        }
+        @include mobile-landscape {
+            font-size: 32px;
+        }
+        @include mobile-portrait {
+            font-size: 22px;
+        }
+    }
+
+    &-sub-header {
+        font-size: 24px;
+        color: $light;
+        text-transform: capitalize;
+        margin: 12px 0px 48px;
+        font-family: $fredoka;
+
+        @include mobile-landscape {
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &-btn {
+        border: none;
+        background: $secondary;
+        color: $white;
+        font-size: 20px;
+        padding: 16px 32px;
+        border-radius: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $fredoka;
+        letter-spacing: 3px;
+        position: relative;
+        z-index: 9;
+        transition: 0.5 ease-in;
+        box-shadow: $shadow;
+
+        @include mobile-landscape {
+            padding: 10px 22px;
+            font-size: 14px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 100%;
+            background: $dark;
+            z-index: -1;
+            transition: 1s ease-in;
+            border-radius: 12px;
+        }
+
+        &:hover {
+            transform: translateY(5px);
+            &::before {
+                right: 0;
+            }
+        }
+    }
+}

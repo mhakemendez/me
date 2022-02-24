@@ -1,0 +1,53 @@
+.about {
+    background: $white;
+    box-shadow: $shadow;
+    &-container {
+        @include container();
+        padding: 6.94em 9.03em;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 6.94em;
+
+        @include sm-screen {
+            flex-direction: column;
+        }
+        @include mobile-portrait {
+            text-align: center;
+        }
+    }
+
+    &-left {
+        width: 55%;
+
+        @include sm-screen {
+            width: 100%;
+        }
+    }
+
+    &-header {
+        @include title();
+        margin-bottom: 50px;
+    }
+
+    &-para {
+        font-size: 18px;
+        margin-top: 12px;
+        letter-spacing: 2px;
+        color: $dark;
+
+        @include mobile-portrait {
+            font-size: 12px;
+        }
+    }
+
+    &-right {
+        width: 45%;
+
+        @include sm-screen {
+            width: 100%;
+        }
+    }
+}

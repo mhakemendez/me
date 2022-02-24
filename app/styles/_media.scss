@@ -1,0 +1,29 @@
+@media only screen and (min-width: 1440px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+@mixin sm-screen {
+    @media only screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin tablet-screen {
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin mobile-landscape {
+    @media only screen and (max-width: 567px) {
+        @content;
+    }
+}
+
+@mixin mobile-portrait {
+    @media only screen and (max-width: 479px) {
+        @content;
+    }
+}
